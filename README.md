@@ -8,7 +8,7 @@ This is a fullstack application that utilizes the Rest API to provide JSON respo
 ## The Command Interpreter
 
 ### How to start the command interpreter:
-The command interpreter can be started using the command ''' ./console.py '''.
+The command interpreter can be started using the command ```./console.py ```.
 
 ### How to use the command interpreter:
 
