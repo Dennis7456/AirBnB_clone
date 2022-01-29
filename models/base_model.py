@@ -24,7 +24,3 @@ class BaseModel():
 		class_name = type(self).__name__
 		id_string = str(self.id)
 		return "[" + class_name + "] (" + id_string + str(self.__dict__) + ")"
-
-myObject = BaseModel(1)
-print(myObject.__str__())
-#print(myObject.to_dict())
