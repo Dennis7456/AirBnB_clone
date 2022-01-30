@@ -5,6 +5,9 @@ which is the main entry point for the console"""
 
 
 class HBNBCommand(cmd.Cmd):
+    prompt = '(hbnb)'
+    file = None
+
     def do_quit(self, arg):
         """ Command to quit the program"""
         return True
