@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import json
 
+from models.base_model import BaseModel
+from models.user import User
+
 """ Class for filestorage """
 class FileStorage():
 
@@ -33,12 +36,15 @@ class FileStorage():
 
     
     def reload(self):
+        my_dict = {"BaseModel": BaseModel, "User": User}
         json_file = ""
         try:
             if FileStorage.__file_path:
                 with open(FileStorage.__file_path, "r", encoding="UTF8") as my_file:
                     json_file = my_file.read()
-                    FileStorage.__objects = json.loads(json_file)
+                    for key, value in json_file.items():
+                        FileStorage.__objects[key] = my_dict[json_file[key]['__class__']](**json_file[key])
+
         except:
             pass
 
