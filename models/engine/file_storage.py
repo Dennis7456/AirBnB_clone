@@ -3,6 +3,11 @@ import json
 
 from models.base_model import BaseModel
 from models.user import User
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models.state import State
 
 """ Class for filestorage """
 class FileStorage():
@@ -36,7 +41,7 @@ class FileStorage():
 
     
     def reload(self):
-        my_dict = {"BaseModel": BaseModel, "User": User}
+        my_dict = {"BaseModel": BaseModel, "User": User, "Place": Place, "State": State, "City": City, "Amenity": Amenity, "Review": Review}
         json_file = ""
         try:
             if FileStorage.__file_path:
