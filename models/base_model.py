@@ -37,7 +37,7 @@ class BaseModel():
         storage.save()
 
     def to_dict(self):
-        basedict = self.__dict__
+        basedict = self.__dict__.copy()
         basedict['__class__'] = self.__class__.__name__
         basedict['created_at'] = self.created_at.isoformat("T")
         basedict['updated_at'] = self.updated_at.isoformat("T")
@@ -45,3 +45,4 @@ class BaseModel():
 
     def __str__(self):
         return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
+    
