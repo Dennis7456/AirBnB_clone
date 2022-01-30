@@ -5,11 +5,11 @@ which is the main entry point for the console"""
 
 
 class HBNBCommand(cmd.Cmd):
-    def do_quit(self):
+    def do_quit(self, arg):
         """ Command to quit the program"""
         return True
 
-    def do_EOF(self):
+    def do_EOF(self, arg):
         """ Command to exit the program"""
         return True
 
