@@ -12,7 +12,7 @@ for other classes.
 
 
 class BaseModel():
-    """ Initi method """
+    """ Init method """
     def __init__(self, *args, **kwargs):
         if len(kwargs) != 0:
             for key in kwargs:
@@ -38,9 +38,9 @@ class BaseModel():
 
     def to_dict(self):
         basedict = self.__dict__
-        basedict['__class__'] = type(self).__name__
-        basedict['updated_at'] = self.updated_at.isoformat("T")
+        basedict['__class__'] = self.__class__.__name__
         basedict['created_at'] = self.created_at.isoformat("T")
+        basedict['updated_at'] = self.updated_at.isoformat("T")
         return basedict
 
     def __str__(self):
