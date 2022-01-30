@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+from turtle import st
 import uuid
 from datetime import datetime
+from models.__init__ import storage
 
 """
 This is the module that contains the base class
@@ -28,9 +30,11 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.new(self)
 
     def save(self):
         self.updated_at = datetime.utcnow()
+        storage.save()
 
     def to_dict(self):
         basedict = self.__dict__
@@ -40,6 +44,4 @@ class BaseModel():
         return basedict
 
     def __str__(self):
-        class_name = type(self).__name__
-        id_string = str(self.id)
-        return "[" + class_name + "] (" + id_string + ")" + str(self.__dict__)
+        return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
