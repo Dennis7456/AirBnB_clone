@@ -2,8 +2,14 @@
 
 ## An AirBnB Project on ALX
 
+[AirBnB]()
+
 This is a web application designed using HTML and JavaScript (for the frontend) and Python and SQL (for the backend).
 This is a fullstack application that utilizes the Rest API to provide JSON responses among many other features.
+
+## Structure
+
+[Structure]()
 
 ## The Command Interpreter
 The command line interpreter offers a way to manipulate the application data and display data on the console.
@@ -15,7 +21,7 @@ The command interpreter can be started using the command ```./console.py ``` or 
 ### Comands available on the command line interpreter:
 1. help
 The help command takes one positional argument which is any of the commands (quit, EOF, create, show, destroy, all, and update). This commands display information regarding the various commands.
-Usage: help <command>
+Usage: help \<command>
 Example: ```(hbnb) help quit```
 
 2. quit
