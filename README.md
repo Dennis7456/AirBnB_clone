@@ -2,14 +2,14 @@
 
 ## An AirBnB Project on ALX
 
-[AirBnB]()
+[AirBnB](https://github.com/Dennis7456/AirBnB_clone/blob/main/65f4a1dd9c51265f49d0.png)
 
 This is a web application designed using HTML and JavaScript (for the frontend) and Python and SQL (for the backend).
 This is a fullstack application that utilizes the Rest API to provide JSON responses among many other features.
 
 ## Structure
 
-[Structure]()
+[Structure](https://github.com/Dennis7456/AirBnB_clone/blob/main/815046647d23428a14ca.png)
 
 ## The Command Interpreter
 The command line interpreter offers a way to manipulate the application data and display data on the console.
