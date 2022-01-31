@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-import uuid
-from datetime import datetime
-from models import storage
-
 """
 This is the module that contains the base class
 which defines all common attributes/methods
 for other classes.
 """
+
+import uuid
+from datetime import datetime
+from models import storage
 
 
 class BaseModel():
@@ -29,6 +29,7 @@ class BaseModel():
             storage.new(self)
 
     def save(self):
+        """ Save and update instance varriables """
         self.updated_at = datetime.utcnow()
         storage.save()
 
