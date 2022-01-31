@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+"""
+State class for new states
+"""
 from models.base_model import BaseModel
 
 """ State class """
 class State(BaseModel):
+    """ State subclass inherits from BaseModel"""
     name = ""
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)

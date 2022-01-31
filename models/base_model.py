@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-from turtle import st
 import uuid
 from datetime import datetime
-from models.__init__ import storage
+from models import storage
 
 """
 This is the module that contains the base class
@@ -12,24 +11,21 @@ for other classes.
 
 
 class BaseModel():
-    """ Init method """
+    """ Defines all common attributes/methods for other classes """
     def __init__(self, *args, **kwargs):
-        if len(kwargs) != 0:
-            for key in kwargs:
-                if key == 'id':
-                    self.id = kwargs.get(key)
-                if key == 'created_at':
-                    self.created_at = datetime.strptime(kwargs.get(key), '%Y-%m-%dT%H:%M:%S.%f')
-                if key == 'updated_at':
-                    self.updated_at = datetime.strptime(kwargs.get(key), '%Y-%m-%dT%H:%M:%S.%f')
-                if key == 'my_number':
-                    self.my_number = kwargs.get(key)
-                if key == 'name':
-                    self.name = kwargs.get(key)
+        """ Initializes the instances attributes """
+        if kwargs:
+            date_format = "%Y-%m-%dT%H:%M:%S.%f"
+            k_dict = kwargs.copy()
+            del k_dict["__class__"]
+            for key in k_dict:
+                if (key == "created_at" or key == "updated_at"):
+                    k_dict[key] = datetime.strptime(k_dict[key], date_format)
+            self.__dict__ = k_dict
         else:
             self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            self.created_at = datetime.today()
+            self.updated_at = datetime.today()
             storage.new(self)
 
     def save(self):
@@ -37,12 +33,14 @@ class BaseModel():
         storage.save()
 
     def to_dict(self):
-        basedict = self.__dict__.copy()
-        basedict['__class__'] = self.__class__.__name__
-        basedict['created_at'] = self.created_at.isoformat("T")
-        basedict['updated_at'] = self.updated_at.isoformat("T")
-        return basedict
+         """ Generate a new dict with an extra field __class__ """
+         base_dict = self.__dict__.copy()
+         base_dict['__class__'] = self.__class__.__name__
+         base_dict['created_at'] = self.created_at.isoformat("T")
+         base_dict['updated_at'] = self.updated_at.isoformat("T")
+         return base_dict
 
     def __str__(self):
+        """ Prints object in reader friendly format"""
         return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
     

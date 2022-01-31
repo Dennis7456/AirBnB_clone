@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""
+City class for new cities
+"""
 from models.base_model import BaseModel
 
-""" City class """
 class City(BaseModel):
+    """ City class extends BaseModel"""
     state_id = ""
     name = ""
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)

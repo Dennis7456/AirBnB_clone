@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 
-""" Review class """
+""" Review class for new reviews """
 
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
+    """ Review subclass inherits from BaseModel """
     place_id = ""
     user_id = ""
     text = ""
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
