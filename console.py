@@ -44,7 +44,8 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """ Command to create a new instance of a class """
+        """ Command to create a new instance of a class 
+        Usage: create <class name>"""
         if not arg:
             print("** class name missing **")
             return
@@ -52,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
         if tokens[0] not in HBNBCommand.my_dict.keys():
             print("** class doesn't exist**")
             return
-        new_instance = HBNBCommand.my_dict(tokens[0])()
+        new_instance = HBNBCommand.my_dict[tokens[0]]()
         new_instance.save()
 
     def do_show(self, arg):
