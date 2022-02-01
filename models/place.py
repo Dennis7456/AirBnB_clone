@@ -5,6 +5,8 @@ Place class for new places
 from models.base_model import BaseModel
 
 """ Place class """
+
+
 class Place(BaseModel):
     """
     Class place extends BaseModel"""

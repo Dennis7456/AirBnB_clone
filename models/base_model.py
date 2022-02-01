@@ -34,14 +34,14 @@ class BaseModel():
         storage.save()
 
     def to_dict(self):
-         """ Generate a new dict with an extra field __class__ """
-         base_dict = self.__dict__.copy()
-         base_dict['__class__'] = self.__class__.__name__
-         base_dict['created_at'] = self.created_at.isoformat("T")
-         base_dict['updated_at'] = self.updated_at.isoformat("T")
-         return base_dict
+        """ Generate a new dict with an extra field __class__ """
+        base_dict = self.__dict__.copy()
+        base_dict['__class__'] = self.__class__.__name__
+        base_dict['created_at'] = self.created_at.isoformat("T")
+        base_dict['updated_at'] = self.updated_at.isoformat("T")
+        return base_dict
 
     def __str__(self):
         """ Prints object in reader friendly format"""
-        return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
-    
+        return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.
+                __dict__))

@@ -30,7 +30,6 @@ class HBNBCommand(cmd.Cmd):
         "Review": Review
     }
 
-
     def do_quit(self, arg):
         """ Command to quit the program"""
         return True
@@ -44,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """ Command to create a new instance of a class 
+        """ Command to create a new instance of a class
         Usage: create <class name>"""
         if not arg:
             print("** class name missing **")
@@ -57,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         new_instance.save()
 
     def do_show(self, arg):
-        """ Command to show an instance of an existing class 
+        """ Command to show an instance of an existing class
         based on the class name and id
         Usage: show <class name> <id>"""
         tokens = shlex.split(arg)
@@ -80,10 +79,10 @@ class HBNBCommand(cmd.Cmd):
             print("** instance not found**")
 
     def do_destroy(self, arg):
-        """ command to delete an instance of an object 
+        """ command to delete an instance of an object
         and save the changes to the JSON file
         Usage: destroy <class name> <id>"""
-        
+
         tokens = shlex.split(arg)
         if len(tokens) == 0:
             print("** class name missing **")
@@ -165,6 +164,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             setattr(my_instance, my_data[2], my_data[3])
         storage.save()
-                
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
