@@ -49,19 +49,45 @@ button:hover {
     padding-left: 40px;
 }
 
-.filters .popover {
-    display: block;
+ .popover {
     background-color: #FAFAFA;
-    width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
-  
+    padding-bottom: 40px;
+    padding-top: 20px;
+    text-align: left;
+    padding-left: 45px;
+    margin-left: 0;
+    opacity: .99;
+    visibility: hidden;
+
 }
 
-.filters ul {
-    list-style-type: none;
+.locations:hover .popover{
+    visibility: visible;
 }
+
+.amenities:hover .popover{
+    visibility: visible;
+}
+
 .popover h2 {
     font-size: 16px;
-    
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-left: -10px;
+    padding-left: 0px;   
+}
+
+.popover ul {
+    text-align: left;
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+}
+
+.popover li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
