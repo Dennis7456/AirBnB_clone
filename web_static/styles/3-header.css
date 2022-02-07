@@ -1,0 +1,10 @@
+header {
+    color: white;
+    height: 70px; 
+    width: 100%;
+    border-bottom: 1px #CCCCCC;
+}
+
+header.logo {
+    align-items: flex-start;
+}
